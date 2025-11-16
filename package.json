@@ -1,0 +1,67 @@
+{
+  "name": "@noa-nuxt/core",
+  "version": "0.1.0-beta.1",
+  "description": "Core classes for NOA - Nuxt Orchestrated Architecture",
+  "author": "Gaëtan compigni.gaetan@gmail.com",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./layers": {
+      "types": "./dist/layers/index.d.ts",
+      "import": "./dist/layers/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "keywords": [
+    "nuxt",
+    "vue",
+    "architecture",
+    "ddd",
+    "domain-driven-design",
+    "layers",
+    "orchestrator",
+    "typescript",
+    "frontend",
+    "framework"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ton-username/noa-nuxt.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/ton-username/noa-nuxt/issues"
+  },
+  "homepage": "https://github.com/ton-username/noa-nuxt#readme"
+}
