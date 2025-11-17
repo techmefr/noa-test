@@ -15,7 +15,7 @@ NOA (Nuxt Orchestrated Architecture) est un **framework d'architecture** pour ap
 
 **Avant NOA (code typique Nuxt) :**
 ```typescript
-// ❌ Composant avec tout mélangé
+// Composant avec tout mélangé
 const invoices = ref([])
 const isLoading = ref(false)
 
@@ -46,7 +46,7 @@ const paginatedInvoices = computed(() => {
 
 **Avec NOA :**
 ```typescript
-// ✅ Composant ultra-simple
+// Composant ultra-simple
 const {
   paginatedInvoices,  // Données paginées
   isLoading,          // État de chargement
@@ -432,7 +432,7 @@ my-nuxt-app/
 
 **Innovation majeure de NOA :**
 ```typescript
-// ✅ Store = État + Getters UNIQUEMENT
+// Store = État + Getters UNIQUEMENT
 export const useInvoiceStore = defineStore('invoice', () => {
   const items = ref<Invoice[]>([])
   const totalCount = computed(() => items.value.length)
@@ -441,7 +441,7 @@ export const useInvoiceStore = defineStore('invoice', () => {
   // PAS D'ACTIONS !
 })
 
-// ✅ Logique dans le Connector (traçable)
+// Logique dans le Connector (traçable)
 class InvoiceConnector {
   async fetchAll() {
     const data = await invoiceService.getAll()
@@ -460,9 +460,9 @@ class InvoiceConnector {
 
 ### Pattern Orchestrator
 ```
-❌ AVANT : 5-6 imports par composant
+AVANT : 5-6 imports par composant
 
-✅ AVEC NOA : 1 seul import (orchestrator)
+AVEC NOA : 1 seul import (orchestrator)
 ```
 
 **Avantages :**
@@ -476,10 +476,10 @@ class InvoiceConnector {
 
 ### 1. Un composant = Un orchestrator
 ```typescript
-// ✅ BON
+// BON
 const { items, fetchAll } = useInvoiceOrchestrator()
 
-// ❌ MAUVAIS
+// MAUVAIS
 const state = useInvoiceState()
 const connector = useInvoiceConnector()
 ```
@@ -563,19 +563,6 @@ Non si vous avez :
 - [ ] Coverage >80%
 - [ ] Video tutorials
 
----
-
-## Licence
-
-MIT © Gaëtan
-
----
-
-## Support
-
-- Documentation : [Lien]
-- Slack : `#noa-support`
-- Issues : [GitHub]
 
 ---
 
